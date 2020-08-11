@@ -1,0 +1,15 @@
+cd rocketbuild
+cp *.php /var/www/html/
+cp *.sh /var/www/html/
+cp ssl.conf /etc/httpd/conf.d/ssl.conf
+cp .htaccess /var/www/html/.
+cp .htpasswd /etc/httpd/.
+cp sudoers /etc/sudoers
+cat gdb-centos6-ssh.tar |docker import - gdb-centos6-ssh:local
+cat gdb-centos7-ssh.tar |docker import - gdb-centos7-ssh:local
+cat gdb-centos8-ssh.tar |docker import - gdb-centos8-ssh:local
+mkdir /root/container
+username/password for http is admin
+yum install httpd mod_ssl
+yum install php
+
